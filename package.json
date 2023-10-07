@@ -1,0 +1,81 @@
+{
+  "name": "@47ng/typescript-library-starter",
+  "version": "0.0.0-semantically-released",
+  "description": "Template repository for TypeScript libraries",
+  "license": "MIT",
+  "author": {
+    "name": "François Best",
+    "email": "npm.typescript-library-starter@francoisbest.com",
+    "url": "https://francoisbest.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/47ng/typescript-library-starter"
+  },
+  "keywords": [],
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist/",
+    "sceau.json"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "tsup": {
+    "entry": [
+      "src/index.ts"
+    ],
+    "treeshake": true
+  },
+  "scripts": {
+    "dev": "run-p dev:*",
+    "dev:build": "tsup --format esm --sourcemap --watch",
+    "dev:test": "vitest dev",
+    "test": "vitest run --coverage",
+    "test:watch": "vitest dev",
+    "clean": "rm -rf ./dist",
+    "typecheck": "tsc",
+    "build": "tsup --clean --format esm,cjs --dts",
+    "ci": "run-p typecheck test build",
+    "prepack": "sceau sign"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.11",
+    "@vitest/coverage-c8": "^0.29.8",
+    "npm-run-all": "^4.1.5",
+    "sceau": "^1.3.0",
+    "semantic-release": "^20.1.3",
+    "tsup": "^6.7.0",
+    "typescript": "^4.9.5",
+    "vite": "^4.2.1",
+    "vitest": "^0.30.1"
+  },
+  "prettier": {
+    "arrowParens": "avoid",
+    "semi": false,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "useTabs": false
+  },
+  "release": {
+    "branches": [
+      "main",
+      {
+        "name": "next",
+        "channel": "next",
+        "prerelease": true
+      }
+    ]
+  }
+}

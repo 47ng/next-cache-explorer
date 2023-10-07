@@ -1,0 +1,10 @@
+name: CI/CD
+
+on:
+  push:
+
+jobs:
+  ci-cd:
+    name: CI/CD
+    uses: 47ng/workflows/.github/workflows/pnpm-ci-cd.yml@main
+    secrets: inherit
