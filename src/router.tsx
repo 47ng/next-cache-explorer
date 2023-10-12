@@ -1,6 +1,10 @@
 import { notFound } from 'next/navigation'
 import React from 'react'
 import { Layout } from './layout'
+import DisabledPage from './pages/disabled'
+import EntryPage from './pages/entry'
+import IndexPage from './pages/index'
+import TagPage from './pages/tag'
 
 export type CacheExplorerCatchAllPageProps = {
   mountPath: string
@@ -15,7 +19,6 @@ export default async function CacheExplorerRouter({
 }: CacheExplorerCatchAllPageProps) {
   const path = (params.slug ?? []).join('/')
   if (path === '') {
-    const IndexPage = (await import('./pages/index')).default
     return (
       <Layout mountPath={mountPath}>
         <IndexPage mountPath={mountPath} />
@@ -23,7 +26,6 @@ export default async function CacheExplorerRouter({
     )
   }
   if (path.startsWith('entry/')) {
-    const EntryPage = (await import('./pages/entry')).default
     return (
       <Layout mountPath={mountPath}>
         <EntryPage
@@ -34,7 +36,6 @@ export default async function CacheExplorerRouter({
     )
   }
   if (path.startsWith('tag/')) {
-    const TagPage = (await import('./pages/tag')).default
     return (
       <Layout mountPath={mountPath}>
         <TagPage
@@ -45,7 +46,6 @@ export default async function CacheExplorerRouter({
     )
   }
   if (path === 'disabled') {
-    const DisabledPage = (await import('./pages/disabled')).default
     return <DisabledPage />
   }
   return notFound()
