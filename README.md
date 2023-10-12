@@ -89,6 +89,16 @@ export default mountCacheExplorer({
 })
 ```
 
+When disabled, the page (and sub-pages) will render a "Cache explorer is disabled" message.
+
+To redirect to the default NotFound page, use the `notFoundWhenDisabled` option:
+
+```ts
+export default mountCacheExplorer({
+  notFoundWhenDisabled: true,
+})
+```
+
 ## License
 
 [MIT](https://github.com/47ng/next-cache-explorer/blob/next/LICENSE) - Made with ❤️ by [François Best](https://francoisbest.com)
