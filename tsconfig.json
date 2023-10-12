@@ -3,10 +3,11 @@
   "compilerOptions": {
     // Type checking
     "strict": true,
+    "noUncheckedIndexedAccess": true,
 
     // Modules
     "module": "ESNext",
-    "moduleResolution": "nodenext",
+    "moduleResolution": "Bundler",
     "resolveJsonModule": true,
     // Language & Environment
     "target": "ESNext",
@@ -14,13 +15,17 @@
 
     // Emit is disabled (typechecking only)
     "noEmit": true,
-    "declaration": false,
+    "declaration": true,
+    "declarationMap": true,
+    "jsx": "react",
 
     // Interop
     "allowJs": true,
     "isolatedModules": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
+    "verbatimModuleSyntax": true,
+    "moduleDetection": "force",
 
     // Misc
     "skipLibCheck": true,
