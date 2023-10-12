@@ -40,17 +40,15 @@
       "esm"
     ],
     "dts": true,
+    "sourcemap": true,
     "entryPoints": [
       "src/index.ts"
     ],
     "treeshake": true
   },
   "scripts": {
-    "dev": "run-p dev:*",
-    "dev:build": "tsup --sourcemap --watch",
-    "clean": "rm -rf ./dist",
     "typecheck": "tsc",
-    "build": "tsup --clean --dts",
+    "build": "tsup --clean --external=react",
     "ci": "run-p typecheck build",
     "prepack": "sceau sign"
   },
