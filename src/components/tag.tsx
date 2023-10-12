@@ -18,7 +18,6 @@ export const Tag: React.FC<TagProps> = ({
     : getColors(tag, fixedHash)
   return (
     <span
-      aria-role="tag"
       style={{
         padding: '0.125rem 0.5rem',
         fontFamily: 'monospace',
