@@ -43,21 +43,29 @@ export default mountCacheExplorer()
 
 ### Index page
 
-> // todo: Add screenshot
+Shows a list of all cache entries and tags. Click an entry to see its details,
+or a tag to only show entries with that tag.
 
-Shows a list of all cache entries. Click an entry to see its details.
+![](https://raw.githubusercontent.com/47ng/next-cache-explorer/main/res/index.png)
 
 ### Tags page
 
-> // todo: Add screenshot
-
 Shows a list of all entries for a given tag.
+
+![](https://raw.githubusercontent.com/47ng/next-cache-explorer/main/res/tag.png)
 
 ### Entry page
 
-> // todo: Add screenshot
+Shows the details of a given cache entry, including:
 
-Shows the details of a single cache entry.
+- Size in bytes
+- Associated URL
+- Revalidation time / TTL
+- Tags to invalidate this entry
+- Response headers
+- Response body
+
+![](https://raw.githubusercontent.com/47ng/next-cache-explorer/main/res/entry.png)
 
 ## Options
 
