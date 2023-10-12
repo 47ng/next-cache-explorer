@@ -3,3 +3,4 @@ dist/
 .env
 .volumes/
 coverage/
+sceau.json
